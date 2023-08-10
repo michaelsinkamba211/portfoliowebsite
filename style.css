@@ -1,5 +1,7 @@
 @import url(“https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap”);
 @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Prompt&display=swap');
+
 
 * {
     margin: 0;
@@ -54,6 +56,8 @@ section,
 footer{
     min-width: 300px;
 }
+
+
 
 /* responsive design will be from */
 
@@ -966,7 +970,11 @@ footer{
     margin: 0px 0px;
 } */
 
- 
+.tittle h1 p{
+    font-family: 'Prompt', sans-serif;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1rem;
+}
 
 
 /* footer starts here */
