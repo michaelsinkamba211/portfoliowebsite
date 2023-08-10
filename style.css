@@ -1,0 +1,661 @@
+@import url(“https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap”);
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    font-family: 'Prompt', sans-serif;
+}
+
+:root {
+    --main-color: #033a80;
+    --bg-color: #fff;
+    --text-color: #0f0c27;
+    --orther-color: rgb(213, 20, 20);
+    --hover: hsl(260, 100%, 51%);
+    --big-font: 3.2rem;
+    --medium-font: 1.8rem;
+    --p-font: 0.941rem;
+    --top-bg:#F8F8F8;
+    --sub-font:1.5rem;
+    --sub-sub-font:.9rem;
+}
+
+/* header */
+.main-header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 80px;
+    background-color: var(--top-bg);
+}
+
+.main-header .main-nav,
+section{
+    max-width: 960px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+
+/* responsive design will be from */
+
+/* computer 900 >  */
+
+
+/* tablet - 900 below  */
+/* phone 568 below */
+
+.main-header .main-nav{
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.main-header .main-nav .menu-bars{
+    display: none;
+}
+
+
+/* nav bar */
+.main-header .main-nav .logo{
+    font-size: var(--medium-font);
+    font-weight: 550;
+}
+
+#first-part-of-name{
+    color: var(--main-color);
+}
+
+#second-part-of-name{
+    color: var(--orther-color);
+}
+
+/* this will be responsive */
+.main-header .main-nav .main-ul{
+    display: flex;
+}
+
+/* links in the nav */
+.main-header .main-nav .main-ul li a{
+    display: block;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font: normal normal bold 16px/18px Ubuntu;
+    color: #717171;
+}
+
+.main-header .main-nav .main-ul li a:target {
+    color: red;
+}
+
+.main-header .main-nav .main-ul li a:hover{
+    color: #143774;
+}
+
+
+/* nav header ends here */
+
+.home{
+    display: grid;
+    grid-template-columns: .4fr .7fr 1fr;
+    /* height: 100vh; */
+    width: 100%;
+    gap: 50px;
+    padding: 50px 0;
+}
+
+.home{
+    /* display: none; */
+}
+
+@media screen and (max-width: 960px){
+    .home{
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 780px){
+    .home{
+        gap: 5px;
+    }
+}
+
+.home .social-media-icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    align-items: center;
+    order: 1;
+} 
+
+
+
+.home .social-media-icons .fa-brands{
+    font-size: var(--medium-font);
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+
+.home .social-media-icons .fa-github{
+    color: black;
+}
+
+.home .social-media-icons .fa-facebook{
+    color: blue;
+}
+
+.home .social-media-icons .fa-whatsapp{
+    color:#25D366 ;
+    
+}
+
+.home .social-media-icons .fa-instagram{
+    color:#fb3958;
+}
+
+.home .home-personal-content{
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* font-weight: bold; */
+    color: #383636;
+} 
+
+.home-personal-content h1{
+    font-size:1.9rem;
+    margin-bottom: 10px;
+    color: #143774;
+}
+
+.home-personal-content h2{
+    font-size:var(--sub-font);
+    margin-bottom: 10px;
+}
+
+.home-personal-content h3{
+ font-size:var(--sub-sub-font);
+ margin-bottom: 10px;
+ color: black;
+}
+
+.home-personal-content p{
+    font-size:var(--p-font);
+    color: #717171;
+    margin-bottom: 20px;
+}   
+
+.home-personal-content a{
+    display: block;
+    background-color: var(--main-color);
+    text-align: center;
+    padding: 15px 40px;
+    border-radius: 40em;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.home-personal-content a:hover{
+    background-color: #bbb;
+}
+.home .home-image{
+    order: 3;
+} 
+
+
+
+/* home section ends here */
+
+
+
+/* about starts here */
+.about h1,
+.about .introduction,
+.about .personal-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .introduction,
+.about .personal-info,
+.about .skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    font-size:var(--sub-sub-font);
+}
+
+
+.about{
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows:2fr 9fr;
+    grid-auto-rows: minmax(90px, auto);
+}
+
+@media screen and (max-width: 960px){
+    .about{
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 780px){
+    .about{
+        gap: 5px;
+    }
+}
+
+
+.about h1{
+    grid-column: 1 / 5;
+    grid-row: 1 / 3;
+    font-size: var(--medium-font);
+    font-weight: 800;
+}
+
+.about p{
+    font-size: var(--p-font);
+    color: #717171;
+    /* font-weight: bold; */
+}
+
+.about .introduction{
+    grid-column: 3 / 5;
+    grid-row: 4 / 6;
+}
+
+.about .skills{
+    grid-column: 1 / 3;
+    grid-row: 7 / 9;
+}
+
+.about .personal-info{
+    grid-column: 1 / 3;
+    grid-row: 4 / 6;
+    /* font-weight: bold; */
+}
+
+
+
+.about .introduction h2{
+    align-self: flex-start;
+    margin-bottom: 20px;
+    color: #033a80;
+}
+
+
+
+.about .personal-info h2{
+    margin-bottom: 20px;
+    color: #033a80;
+}
+
+.about .personal-info ul{
+    color: #717171;
+    display: flex;
+    flex-direction: column;
+}
+
+.about .personal-info ul .fa-solid,
+.fa-regular{
+    display: inline-block;
+    padding-right: 20px;
+    padding-bottom: 25px;
+}
+
+.about .personal-info ul .fa-phone{
+    color: var(--main-color);
+}
+
+.about .personal-info ul .fa-envelope{
+    color: red;
+}
+
+.about .personal-info ul .fa-user{
+    color: black;
+}
+
+.about .personal-info ul .fa-location-dot{
+    color: red;
+}
+
+.about a{
+    display: block;
+    background-color: var(--main-color);
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 40em;
+    margin: 5px auto;
+    color: #fff;
+}
+
+.about a:hover{
+    background-color: #bbb;
+}
+
+/* skilss */
+
+.about .skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.about .skills h2{
+    margin-bottom: 20px;
+    color: #033a80;
+}
+
+
+.about .skills .fa-html5{
+    color: orange;
+}
+
+.about .skills .fa-css3-alt{
+    color: blue;
+}
+
+.about .skills .fa-square-js{
+    color: yellow;
+}
+
+.about .skills .fa-react{
+    color: lightblue;
+}
+
+.about .skills .fa-java{
+    color: red;
+}
+
+.about .skills .fa-brands{
+    display: block;
+    font-size: 1.7rem;
+    margin-right: 20px;
+
+}
+
+.bar-holder {
+    display: flex;
+    width:70%;
+    height: 17px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* bars  */
+
+.bar-1,
+.bar-2,
+.bar-3,
+.bar-4,
+.bar-5 {
+    height: 100%;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 400;
+    
+}
+
+.bar-1{
+    width: 90%;
+    background: linear-gradient(100deg, red, yellow);
+}
+
+.bar-2{
+    width: 90%;
+    
+    background: linear-gradient(100deg, rgb(38, 0, 255),  yellow);
+}
+
+.bar-3{
+    width: 25%;
+    background: linear-gradient(100deg, yellow, red);
+}
+
+.bar-4{
+    width: 10%;
+    background: linear-gradient(100deg, lightblue, yellow);
+}
+
+.bar-5{
+    width: 50%;
+    background: linear-gradient(100deg,  red, yellow);
+}
+
+/* about sercices ends here */
+
+ 
+/* services section starts here */
+
+.services{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.services h1{
+    align-self: center;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.services .coding,
+.services .phone-repair{
+    margin: 0 auto;
+    /* background-color: #0f0c27; */
+}
+
+.services .coding .sub-coding,
+.services .phone-repair .sub-repair{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.services .coding .frontend-development,
+.services .coding .backened-development{
+    width: 220px;
+    height: 130px;
+    border-bottom: 2px solid #bbb;
+    border-top: 0;
+    border-radius: 12px;
+    border-bottom-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 9px 17px 24px -6px rgba(0,0,0,0.49);
+    color: #717171;
+    /* font-weight: bold; */
+}
+
+.services h3{
+    font-size: 1rem;
+}
+
+.services a{
+    display: block;
+    color: var(--main-color);
+    padding: 5px 20px;
+    border-radius: 12px;
+}
+
+
+.services .phone-repair .computer-services,
+.services .phone-repair .phone-services,
+.services .phone-repair .orther-services{
+    width: 220px;
+    height: 130px;
+    border-bottom: 2px solid #bbb;
+    border-top: 0;
+    border-radius: 12px;
+    border-bottom-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 9px 17px 24px -6px rgba(0,0,0,0.49);
+    color: #717171;
+    /* font-weight: bold; */
+}
+
+.services .coding .frontend-development.works,
+.services .coding .backened-development.works{
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.services .coding .frontend-development.works.simple-life{
+    background: url(./images/simplelife.jpg);
+    color: var(--main-color);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.services .coding .backened-development.rock{
+    background: url(./images/rock-paper-scissors.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: var(--main-color);
+}
+
+
+.services .coding .backened-development.portfolio{
+    background: url(./images/portfolio.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: var(--main-color);
+}
+
+.services .fa-brands,
+.services .fa-solid{
+    font-size: 2rem;
+    color: blue;
+}
+
+/* .services h2{
+    margin-bottom: 50px;
+} */
+
+.services .phone-repair h2{
+    margin: 50px 0;
+}
+
+.services h1{
+    font-size: var(--medium-font);
+    font-weight: 800;
+}
+
+.services h2{
+    margin-bottom: 20px;
+    color: #033a80;
+    font-size: 1.3rem;
+}
+
+.services .rock a,
+.services .simple-life a,
+.services .portfolio a{
+     background-color: var(--main-color);
+     color: #fff;
+}
+
+/* contact me */
+
+.services h1 p {
+    font-size: var(--p-font);
+    color: red;
+}
+
+
+.services .form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.services .form .name,
+.services .form .email{
+    height: 50px;
+    border-width: 0;
+    background-color: rgba(128, 0, 128, 0.15);
+    margin-bottom: 20px;
+    padding: 5px 20px;
+    font-size: var(--p-font);
+}
+
+.services .form .message{
+    margin-bottom: 20px;
+    font-size: var(--p-font);
+    padding: 5px 20px;
+    border-width: 0;
+    background-color: rgba(128, 0, 128, 0.15);
+}
+.services .form button{
+    width: 20%;
+    height: 40px;
+    margin: 0 auto;
+    border-width: 0;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    font-size: var(--main-color);
+    color: #fff;
+}
+
+
+/* contact ends here */
+
+footer{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #bbb;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    max-width: 960px;
+    width:75%;
+    margin: 0 auto;
+}
+
+.footer p{
+    color: #717171;
+    font-size: var(--p-font);
+}
+
+.footer .logo{
+    font-size: 1.5rem;
+    font-weight: 550;
+}
+
