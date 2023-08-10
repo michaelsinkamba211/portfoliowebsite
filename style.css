@@ -377,6 +377,7 @@ footer{
 
 .about .about-me .personal-info .tittle{
     grid-area: tittle;
+    text-align: left;
 }
 
 .about .about-me .personal-info .info{
