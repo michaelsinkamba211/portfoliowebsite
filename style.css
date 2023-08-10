@@ -33,7 +33,6 @@
     right: 0;
     width: 100%;
     height: 80px;
-    
     background-color: var(--top-bg);
 }
 
@@ -604,6 +603,10 @@ section{
     cursor: pointer;
 }
 
+.services .form button a{
+    color: #fff;
+}
+
 
 /* contact ends here */
 
@@ -626,5 +629,12 @@ footer p{
 footer .logo{
     font-size: 1.5rem;
     font-weight: 550;
+}
+
+
+footer .logo .ceo{
+    font-size: var(--p-font);
+    font-weight: lighter;
+    display: flex;
 }
 
