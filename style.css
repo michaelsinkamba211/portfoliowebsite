@@ -510,6 +510,7 @@ footer{
     color: #fff;
     border-radius: 20px;
     text-align: center;
+    line-height:20px;
     font-weight: 400;
     background-color: var(--main-color);
 }
