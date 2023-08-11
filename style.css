@@ -55,6 +55,7 @@ section{
 @media screen and (min-width:1200px){
     .main-header .main-nav{
         width: 70%;
+        margin: 0 auto;
     }
 }
 
@@ -184,6 +185,10 @@ footer{
         text-align: center;
     }
 
+    .main-header .main-nav .main-ul li a:visited ~ .menu:checked ~ .main-ul{
+        display: none;
+    }
+
     .main-header .main-nav .menu-bars{
         display: block;
     }
@@ -197,6 +202,13 @@ footer{
     text-transform: uppercase;
     font: normal normal bold 16px/18px Ubuntu;
     color: #717171;
+}
+
+
+.main-ul li a.active {
+    border-bottom: 1px var(--main-color) solid;
+    border-width: 2px;
+
 }
 
 .main-header .main-nav .main-ul li a:hover{
@@ -331,6 +343,11 @@ footer{
         justify-content: center;
         margin: 0 100px;
     } 
+
+    .main-header .main-nav .main-ul li a{
+        width: fit-content;
+        margin: 0 auto;
+    }
 }
 
 
@@ -360,6 +377,11 @@ footer{
         justify-content: center;
         margin: 0;
     } 
+
+    .main-header .main-nav .main-ul li a{
+        width: fit-content;
+        margin: 0 auto;
+    }
 }
 
 
@@ -607,12 +629,6 @@ footer{
 /* about sercices ends here */
 
 
- 
-
-
-
-
-
 /* services section beins here */
 
 .services{
@@ -810,24 +826,6 @@ footer{
 .services .coding h3{
     color: var(--main-color);
 }
-
-
-
-
-
-
-
-
-
-/*  */
-/*  */
-
-
-
-
-
-
-
 
 
 /* works section begins here */
@@ -1028,8 +1026,9 @@ footer{
     background-color: #bbbbbb84;
 }
 .contact .form button{
-    width: 20%;
+    width: fit-content;
     height: 40px;
+    padding: 3px 20px;
     margin: 0 auto;
     border-width: 0;
     border-radius: 10px;
@@ -1039,20 +1038,11 @@ footer{
     cursor: pointer;
 }
 
-.contact .form button a{
+.contact .form button{
     color: #fff;
 }
 
 
-/* contact ends here */
-
-/* .home,
-.about,
-.services,
-.works,
-.contact{
-    margin: 0px 0px;
-} */
 
 .tittle h1 p{
     font-family: 'Prompt', sans-serif;
@@ -1098,3 +1088,6 @@ footer .logo .ceo{
 section{
     width: 100%;
 }
+
+
+
