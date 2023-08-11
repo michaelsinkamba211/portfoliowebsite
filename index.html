@@ -10,8 +10,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <!-- <script src="script.js"></script> -->
 </head>
 <body>
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+
+<!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+
     <!-- nav bar header -->
     <header  class="main-header">
         <nav class="main-nav">
@@ -169,7 +177,7 @@
         
         <span id="works"></span>
         <div class="tittle">
-            <h1 >Services <br> <p>see what i do</p></h1>
+            <h1 >Services <br> <p>see what i've done</p></h1>
         </div>
         <div class="coding">
             <div class="sub-tittle">
@@ -315,16 +323,27 @@
         </div>
        
         <div class="form">
-            <form action="send-email.php" method="post">
-                <input type="text" name="name" class="name" placeholder="Your Name" required>
-                <input type="email" name="email" class="email" placeholder="Your Email" required>
-                <textarea style="resize: none;" name="message" class="message" cols="30" rows="10" placeholder="Write Message here" required></textarea>
-                <button type="submit">
-                    <a href="https://wa.me/message/WSQ463DN4ZDRK1" target="_blank">Send</a>
+            <form  id="contact-form">
+                <input type="text" id="user_name" name="name" class="name" placeholder="Your Name" required>
+
+                <input type="email" id="user_email" name="email" class="email" placeholder="Your Email" required>
+
+                <textarea style="resize: none;" id="message" name="message" class="message" cols="30" rows="10" placeholder="Write Message here" required>
+                </textarea>
+
+                <button class="submit-btn" type="submit">
+                    Send
                 </button>
 
             </form>
+
+        </div>
+            
     </div>
+
+
+    
+
         
 
     </section>
@@ -341,5 +360,91 @@
         <div class="logo"></span><span id="first-part-of-name">Mich</span><span id="second-part-of-name">eal</span>.</div>
         
     </footer>
+
+
+    <script>
+
+
+const contactForm = document.querySelector("#contact-form");
+const submitBtn = document.querySelector(".submit-btn");
+const nameInput =document.querySelector("#user_name");
+const emailInput = document.querySelector("#user_email");
+const messageInput = document.querySelector("#message");
+
+// get needed datafrom email JS
+
+const publicKey = "WubvjL_oM6fI2e3yx";
+const serviceID =  "service_ss1fufl";
+const templateID = "template_c8idzek";
+
+// initialize email JS with public key
+emailjs.init(publicKey);
+
+
+// add submit event to the form
+
+contactForm.addEventListener("submit", e => {
+    // prevent form default behaviour
+    e.preventDefault();
+
+    // Change button text
+
+    submitBtn.innerText = "Just A Moment...";
+
+    // get all input field values
+
+    const inputFields = {
+        name: nameInput.value,
+        email: emailInput.value,
+        message: messageInput.value
+    }
+
+    /*send the email (adding service , template id and input fields)
+    */ 
+
+    emailjs.send(serviceID, templateID, inputFields)
+    .then(() => {
+        // changing button text
+        submitBtn.innerText = "Message Sent Successfully";
+        
+        // let clear all inputs 
+        nameInput.value = "";
+        emailInput.value = "";
+        messageInput.value = "";
+    }, (error) => {
+        // console erro
+        console.log(error);
+        // change button  text for error
+        submitBtn.innerText = "Something went wrong";
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll("section");
+        const links = document.querySelectorAll(".main-ul li a");
+    
+        function setActiveLink(index) {
+            links.forEach(link => link.classList.remove("active"));
+            links[index].classList.add("active");
+        }
+    
+        function getCurrentSection() {
+            for (let i = sections.length - 1; i >= 0; i--) {
+                if (sections[i].getBoundingClientRect().top <= window.innerHeight / 2) {
+                    return i;
+                }
+            }
+            return 0;
+        }
+    
+        window.addEventListener("scroll", function() {
+            const currentSectionIndex = getCurrentSection();
+            setActiveLink(currentSectionIndex);
+        });
+    });
+    
+    </script>
 </body>
 </html>
