@@ -22,9 +22,9 @@
     --hover: hsl(260, 100%, 51%);
     --big-font: 3.2rem;
     --medium-font: 1.8rem;
-    --p-font: 0.941rem;
+    --p-font: .97rem;
     --top-bg:#F8F8F8;
-    --sub-font:1.5rem;
+    --sub-font:1.2rem;
     --sub-sub-font:.9rem;
 }
 
@@ -49,6 +49,13 @@ section{
 .main-header .main-nav{
     width: 90%;
     margin: 0 auto;
+}
+
+
+@media screen and (min-width:1200px){
+    .main-header .main-nav{
+        width: 70%;
+    }
 }
 
 header,
@@ -97,10 +104,7 @@ footer{
     color: var(--orther-color);
 }
 
-/* this will be responsive */
-.main-header .main-nav .main-ul{
-    display: flex;
-}
+
 
 .main-header .main-nav{
     position: relative;
@@ -111,14 +115,16 @@ footer{
 .main-header .main-nav  .menu-bars::before,
 .main-header .main-nav  .menu-bars::after{
     width: 30px;
-    height: 2px;
+    height: 3px;
     position: absolute;
     line-height: 80px;
     background-color: #717171;
+    
 }
 
 .main-header .main-nav  .menu-bars{
     right: 15px;
+    top: 37px;
 }
 
 .main-header .main-nav  .menu-bars::before{
@@ -131,9 +137,51 @@ footer{
     top: -5px;
 }
 
+
+.menu:checked ~ .menu-bars::after{
+    transform: rotate(45deg);
+    top: 0;
+}
+.menu:checked ~ .menu-bars{
+    background: transparent;
+}
+
+.menu:checked ~ .menu-bars::before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+.menu{
+    display: none;
+}
+
+/* this will be responsive */
+.main-header .main-nav .main-ul{
+    display: flex; 
+}
+
+
 @media screen and (max-width:750px){
     .main-header .main-nav .main-ul{
         display: none;
+    }
+
+    .menu:checked ~ .main-ul {
+    display: block;
+    margin-top: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--top-bg);
+    width: 100%;
+    height: 100vh;
+    }
+
+
+    .main-header .main-nav .main-ul li{
+        margin: 25px 0;
+        text-align: center;
     }
 
     .main-header .main-nav .menu-bars{
@@ -209,7 +257,7 @@ footer{
 } 
 
 .home-personal-content h1{
-    font-size:1.9rem;
+    font-size: var(--medium-font);
     margin-bottom: 10px;
     color: red;
 }
@@ -234,7 +282,7 @@ footer{
 .home-personal-content a{
     display: block;
     text-align: center;
-    padding: 15px 40px;
+    padding: 8px 30px;
     border-radius: 40em;
     margin: 0 auto;
     background-color: #bbb;
@@ -331,9 +379,13 @@ footer{
     text-align: center;
 }
 
+.about h1{
+    font-weight: 800;
+    font-size: var(--medium-font);
+}
+
 .about .tittle h1 p {
     font-size: var(--p-font);
-    color: red;
 }
 
 .about .about-me{
@@ -348,11 +400,17 @@ footer{
     justify-content: center;
 }
 
+/* .about .about-me{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+    margin: 0 auto;
+} */
+
 .about .about-me .personal-info,
 .about .about-me .introduction,
 .about .about-me .skills{
-    width: 450px;
-    width: 70%;
+    width: 400px;
     margin: 15px 0;
 }
 
@@ -366,6 +424,20 @@ footer{
 
 .about .about-me .skills{
     order: 3;
+}
+
+@media screen and (max-width:840px){
+    .about .about-me .personal-info{
+        order: 2;
+    }
+    
+    .about .about-me .introduction{
+        order: 1;
+    }
+    
+    .about .about-me .skills{
+        order: 3;
+    }
 }
 
 
@@ -409,6 +481,7 @@ footer{
 .about .introduction h2{
     margin-bottom: 20px;
     color: #033a80;
+    font-size: var(--sub-font);
 }
  
 
@@ -451,17 +524,12 @@ footer{
     color: white;
 }
 
-/* skilss */
 
-/* .about .skills{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
 
 .about .skills h2{
     margin-bottom: 20px;
-    color: #033a80;
+    font-size: var(--sub-font);
+    color: var(--main-color);
 }
 
 
@@ -494,7 +562,7 @@ footer{
 .bar-holder {
     display: flex;
     width:100%;
-    height: 20px;
+    height: 15px;
     align-items: center;
     margin-bottom: 20px;
 }
@@ -510,9 +578,10 @@ footer{
     color: #fff;
     border-radius: 20px;
     text-align: center;
-    line-height:20px;
+    line-height: 15px;
     font-weight: 400;
     background-color: var(--main-color);
+    font-size: .7rem;
 }
 
 .bar-1{
@@ -564,7 +633,6 @@ footer{
 
 .services .tittle h1 p {
     font-size: var(--p-font);
-    color: red;
 }
 
 .services .coding{
@@ -632,10 +700,9 @@ footer{
 
 .services .sub-coding a{
     display: block;
-    background-color: var(--main-color);
     padding: 0;
     width: 120px;
-    color: white;
+    color: blue;
     text-align: center;
 }
 
@@ -672,11 +739,6 @@ footer{
 
 
 
-
-
-
-
-
 /* phone repair */
 
 .services .phone-repair{
@@ -688,6 +750,10 @@ footer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: minmax(50px, auto);
+}
+
+.services .phone-repair li{
+    list-style: disc;
 }
 
 .services .phone-repair .sub-tittle{
@@ -740,6 +806,11 @@ footer{
     background-color: #bbb;
 }
 
+.services .phone-repair h3,
+.services .coding h3{
+    color: var(--main-color);
+}
+
 
 
 
@@ -778,9 +849,13 @@ footer{
     text-align: center;
 }
 
+.works h1{
+    font-weight: 800;
+    font-size: var(--medium-font);
+}
+
 .works .tittle h1 p {
     font-size: var(--p-font);
-    color: red;
 }
 
 /* works tittle ends */
@@ -826,6 +901,7 @@ footer{
     justify-content: space-around;
     align-items: center;
     margin: 20px 30px;
+    line-height: 40px;
 }
 
 .second-coding-work .frontend-development,
@@ -839,6 +915,7 @@ footer{
     border-radius: 12px;
     color: #717171;
     box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
+    
 }
 
 /* orther styles  */
@@ -876,6 +953,11 @@ footer{
 .works a:hover{
     background-color: var(--main-color);
     color: #fff;
+}
+
+.works .sub-tittle h2{
+    font-size: var(--sub-font);
+    color: var(--main-color)
 }
 
 
@@ -919,11 +1001,12 @@ footer{
 
 .contact h1{
     align-self:center;
+    font-size: var(--medium-font);
+    font-weight: 800;
 }
 
 .contact h1 p {
     font-size: var(--p-font);
-    color: red;
 }
 
 
@@ -931,7 +1014,7 @@ footer{
 .contact .form .email{
     height: 50px;
     border-width: 0;
-    background-color: rgba(0, 128, 2, 0.15);
+    background-color: #bbbbbb84;
     margin-bottom: 20px;
     padding: 5px 20px;
     font-size: var(--p-font);
@@ -975,6 +1058,7 @@ footer{
     font-family: 'Prompt', sans-serif;
     font-family: 'Gloria Hallelujah', cursive;
     font-size: 1rem;
+    color: #717171;
 }
 
 
@@ -1007,6 +1091,7 @@ footer .logo .ceo{
     font-size: var(--p-font);
     font-weight: lighter;
     display: flex;
+    
 }
 
 
